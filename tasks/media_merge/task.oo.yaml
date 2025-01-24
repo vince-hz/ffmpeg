@@ -1,0 +1,64 @@
+inputs_def:
+  - handle: video_file
+    description: Input
+    json_schema:
+      type: string
+      ui:widget: file
+    value: ""
+  - handle: audio_file
+    json_schema:
+      type: string
+      ui:widget: file
+    value:
+    nullable: true
+  - handle: srt
+    json_schema:
+      type: string
+      ui:widget: file
+    value:
+    nullable: true
+  - handle: formate
+    json_schema:
+      enum:
+        - mp4
+        - wmv
+        - mov
+        - gif
+        - flv
+        - avi
+      ui:options:
+        labels:
+          - MP4
+          - WMV
+          - MOV
+          - GIF
+          - FLV
+          - AVI
+    value:
+    nullable: true
+  - handle: file_name
+    json_schema:
+      type: string
+    value:
+    nullable: true
+  - handle: save_address
+    json_schema:
+      type: string
+      ui:widget: file
+    value:
+    nullable: true
+outputs_def:
+  - handle: media_file
+    description: Output
+    json_schema:
+      type: string
+      ui:widget: file
+ui:
+  default_width: 450
+executor:
+  name: nodejs
+  options:
+    spawn: false
+    entry: main.ts
+title: Media Merge
+icon: ":fa6-solid:code-merge:"

@@ -1,0 +1,22 @@
+{
+  "nodes": {
+    "merged-audio#2": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 405,
+          "y": 330
+        }
+      }
+    },
+    "dir-to-path-list#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": -285.2644649454189,
+          "y": 343.23061356673304
+        }
+      }
+    }
+  }
+}

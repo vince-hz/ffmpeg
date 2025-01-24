@@ -1,0 +1,19 @@
+icon: https://package-assets.oomol.com/packages/ffmpeg-mac/0.0.8/files/package/icon.png
+scripts:
+  # Script executed when the container is first loaded
+  # eg: bootstrap: pip install pandas
+  bootstrap: |
+    pnpm install 
+    pip install -r requirements.txt
+    wget https://static.oomol.com/ffmpeg_oomol/install.sh --output-document /tmp/installer.sh
+    bash +x /tmp/installer.sh
+dependencies:
+  oomol-transform: 0.0.1
+  oomol-file: 0.0.1
+  read-file: 0.0.3
+name: ffmpeg
+version: 0.0.2
+description: Video processing library based on fluent-ffmpeg package
+displayName: FFmpeg
+releaseNotes: add audio merge
+repository: https://github.com/oomol-flows/ffmpeg-mac

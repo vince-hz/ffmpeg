@@ -1,0 +1,62 @@
+{
+  "nodes": {
+    "read_media_to_ffmpeg#1": {
+      "contentWidth": 427.1135949477034,
+      "rfNode": {
+        "position": {
+          "x": 28.879718734722474,
+          "y": 480.75
+        }
+      }
+    },
+    "audio_video_separation#1": {
+      "contentWidth": 386.7765168262481,
+      "rfNode": {
+        "position": {
+          "x": 548.7378661107138,
+          "y": 480.75
+        }
+      }
+    },
+    "save_video#1": {
+      "contentWidth": 450,
+      "rfNode": {
+        "position": {
+          "x": 2335.4625670240885,
+          "y": 445.55789589427144
+        }
+      }
+    },
+    "save_audio#1": {
+      "contentWidth": 447.06350824621484,
+      "rfNode": {
+        "position": {
+          "x": 1030.4032134797312,
+          "y": 480.75
+        }
+      }
+    },
+    "preview-meta-data#1": {
+      "contentWidth": 498.45991322830554,
+      "rfNode": {
+        "position": {
+          "x": 634.2834905660378,
+          "y": 1058.1014150943397
+        }
+      },
+      "sections": {
+        "preview": {
+          "cardCollapsed": true
+        }
+      }
+    },
+    "mac-arm-gpu#2": {
+      "rfNode": {
+        "position": {
+          "x": 1687.6223745186535,
+          "y": 507.75
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+nodes:
+  - task: self::read_media_to_ffmpeg
+    title: "Read Media To FFmpeg #1"
+    node_id: read_media_to_ffmpeg#1
+    inputs_from:
+      - handle: video_source
+        value: /oomol-driver/oomol-storage/oomol_local.mp4
+  - task: self::audio_video_separation
+    title: "Audio Video Separation #1"
+    node_id: audio_video_separation#1
+    inputs_from:
+      - handle: ffmpeg_source
+        from_node:
+          - node_id: read_media_to_ffmpeg#1
+            output_handle: ffmpeg_source
+  - task: self::save_video
+    title: "Save Video #1"
+    node_id: save_video#1
+    inputs_from:
+      - handle: video_source
+        from_node:
+          - node_id: mac-arm-gpu#2
+            output_handle: ffmpeg_source
+      - handle: file_name
+        value:
+      - handle: formate
+        value:
+      - handle: save_address
+        value: /oomol-driver/oomol-storage/uuuu
+  - task: self::save_audio
+    title: "Save Audio #1"
+    node_id: save_audio#1
+    inputs_from:
+      - handle: audio_source
+        from_node:
+          - node_id: audio_video_separation#1
+            output_handle: only_audio
+      - handle: file_name
+        value:
+      - handle: formate
+        value:
+      - handle: save_address
+        value:
+  - task: self::preview_meta_data
+    title: "preview-meta-data #1"
+    node_id: preview-meta-data#1
+    inputs_from:
+      - handle: ffmpeg_source
+        from_node:
+          - node_id: read_media_to_ffmpeg#1
+            output_handle: ffmpeg_source
+  - task: self::mac_arm_gpu
+    node_id: mac-arm-gpu#2
+    inputs_from:
+      - handle: ffmpeg_source
+        from_node:
+          - node_id: audio_video_separation#1
+            output_handle: only_video

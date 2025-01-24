@@ -1,0 +1,23 @@
+nodes:
+  - task: self::merged_audio
+    title: "Merged Audio #2"
+    node_id: merged-audio#2
+    inputs_from:
+      - handle: audio_files
+        from_node:
+          - node_id: dir-to-path-list#1
+            output_handle: path_array
+      - handle: name
+        value:
+      - handle: format
+        value:
+      - handle: save_address
+        value: /oomol-driver/oomol-storage/run
+  - task: read-file::dir-to-path-list
+    title: "Dir To Path List #1"
+    node_id: dir-to-path-list#1
+    inputs_from:
+      - handle: dir
+        value: /oomol-driver/oomol-storage/mp3
+      - handle: sort
+        value: true

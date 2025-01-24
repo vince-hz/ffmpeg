@@ -1,0 +1,50 @@
+inputs_def:
+  - handle: ffmpeg_source
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
+outputs_def:
+  - handle: only_video
+    description: Output
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
+    kind: video
+  - handle: only_audio
+    json_schema:
+      contentMediaType: oomol/var
+      type:
+        - string
+        - number
+        - integer
+        - boolean
+        - object
+        - array
+        - "null"
+      ui:widget: any
+    kind: audio
+icon: ":fa6-solid:code-branch:currentColor:"
+ui:
+  default_width: 350
+executor:
+  name: nodejs
+  options:
+    spawn: false
+    entry: main.ts
+title: Audio Video Separation
