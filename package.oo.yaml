@@ -12,8 +12,8 @@ dependencies:
   oomol-file: 0.0.1
   read-file: 0.0.3
 name: ffmpeg
-version: 0.0.2
+version: 0.0.3
 description: Video processing library based on fluent-ffmpeg package
 displayName: FFmpeg
-releaseNotes: add audio merge
-repository: https://github.com/oomol-flows/ffmpeg-mac
+releaseNotes: update code repo
+repository: https://github.com/oomol-flows/ffmpeg
