@@ -4,7 +4,10 @@ nodes:
     node_id: read_media_to_ffmpeg#1
     inputs_from:
       - handle: video_source
-        value: /oomol-driver/oomol-storage/oomol_local.mp4
+        value: /oomol-driver/oomol-storage/local.mp4
+        from_node:
+          - node_id: url_to_path#1
+            output_handle: address
   - task: self::audio_video_separation
     title: "Audio Video Separation #1"
     node_id: audio_video_separation#1
@@ -26,7 +29,7 @@ nodes:
       - handle: formate
         value:
       - handle: save_address
-        value: /oomol-driver/oomol-storage/uuuu
+        value: /oomol-driver/oomol-storage/book
   - task: self::save_audio
     title: "Save Audio #1"
     node_id: save_audio#1
@@ -56,3 +59,9 @@ nodes:
         from_node:
           - node_id: audio_video_separation#1
             output_handle: only_video
+  - task: oomol-file::url_to_path
+    title: "URL to path  #1"
+    node_id: url_to_path#1
+    inputs_from:
+      - handle: url
+        value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/maomao.mp4

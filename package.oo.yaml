@@ -9,11 +9,11 @@ scripts:
     bash +x /tmp/installer.sh
 dependencies:
   oomol-transform: 0.0.1
-  oomol-file: 0.0.1
+  oomol-file: 0.0.7
   read-file: 0.0.3
 name: ffmpeg
-version: 0.0.3
+version: 0.0.4
 description: Video processing library based on fluent-ffmpeg package
 displayName: FFmpeg
-releaseNotes: update code repo
+releaseNotes: update example
 repository: https://github.com/oomol-flows/ffmpeg
