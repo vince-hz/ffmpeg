@@ -12,8 +12,8 @@ dependencies:
   oomol-file: 0.0.7
   read-file: 0.0.3
 name: ffmpeg
-version: 0.0.4
+version: 0.0.5
 description: Video processing library based on fluent-ffmpeg package
 displayName: FFmpeg
-releaseNotes: update example
+releaseNotes: fix audio bug
 repository: https://github.com/oomol-flows/ffmpeg

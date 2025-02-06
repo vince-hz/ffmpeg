@@ -4,7 +4,7 @@ import { FfmpegCommand } from "fluent-ffmpeg";
 type Inputs = Readonly<{
   video_source: FfmpegCommand,
   file_name: string | null,
-  formate: string | null,
+  format: string | null,
   save_address: string | null,
 }>;
 
@@ -18,7 +18,7 @@ export default async function (params: Inputs, context: Context): Promise<Output
   const inputPath = getInputPath(params.video_source);
   const origin_file_name = extractBaseName(inputPath);
   const file_name = params.file_name ? params.file_name : origin_file_name;
-  const formate = params.formate ? params.formate : "mp4";
+  const formate = params.format ? params.format : "mp4";
   const save_address = params.save_address ? `${params.save_address}/${file_name}.${formate}` : `${context.sessionDir}/${file_name}.${formate}`
   try {
     await new Promise((resolve, reject) => {
@@ -35,6 +35,7 @@ export default async function (params: Inputs, context: Context): Promise<Output
     console.log('Conversion complete');
   } catch (err) {
     console.error('Error during conversion:', err);
+    throw new Error(`Error converting video: ${err}`);
   } finally {
     console.log(save_address);
     context.preview({ type: "video", data: save_address })

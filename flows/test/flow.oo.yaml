@@ -26,7 +26,7 @@ nodes:
             output_handle: ffmpeg_source
       - handle: file_name
         value:
-      - handle: formate
+      - handle: format
         value:
       - handle: save_address
         value: /oomol-driver/oomol-storage/book
@@ -39,9 +39,9 @@ nodes:
           - node_id: audio_video_separation#1
             output_handle: only_audio
       - handle: file_name
-        value:
-      - handle: formate
-        value:
+        value: uuuu
+      - handle: format
+        value: aac
       - handle: save_address
         value:
   - task: self::preview_meta_data

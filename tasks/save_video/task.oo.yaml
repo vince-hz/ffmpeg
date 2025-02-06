@@ -9,7 +9,7 @@ inputs_def:
       type: string
     value:
     nullable: true
-  - handle: formate
+  - handle: format
     json_schema:
       enum:
         - mp4
