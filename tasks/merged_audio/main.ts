@@ -11,11 +11,11 @@ type Outputs = {
   save_address: string;
 }
 
-export default async function(
+export default async function (
   params: Inputs,
   context: Context<Inputs, Outputs>
 ): Promise<Outputs> {
-  const {audio_files, name, format, save_address} = params
+  const { audio_files, name, format, save_address } = params
   const audio_name = name || 'merged_audio';
   const audio_format = format || 'mp3';
   const tempDir = save_address || context.sessionDir;
@@ -42,6 +42,9 @@ async function mergeMP3Files(inputFiles: string[], outputFile: string, tempDir: 
 
     // 合并文件
     command
+      .on("start", (commandLine) => {
+        console.log(`FFmpeg started with command: ${commandLine}`);
+      })
       .on('end', () => resolve(outputFile))
       .on('error', (err) => reject(err))
       .mergeToFile(outputFile, tempDir);

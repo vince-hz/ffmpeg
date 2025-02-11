@@ -1,5 +1,5 @@
 import type { Context } from "@oomol/types/oocana";
-import ffmpeg, { FfmpegCommand } from "fluent-ffmpeg";
+import { FfmpegCommand } from "fluent-ffmpeg";
 
 type Inputs = {
   ffmpeg_source: FfmpegCommand;

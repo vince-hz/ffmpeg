@@ -9,7 +9,7 @@ type Inputs = Readonly<{
 }>;
 
 type Outputs = Readonly<{ file_adress: string }>;
-import { extractBaseName  } from "../../utils/get-file-name"
+import { extractBaseName } from "../../utils/get-file-name"
 import { getInputPath } from "../../utils/get-input-path";
 
 
@@ -24,6 +24,9 @@ export default async function (params: Inputs, context: Context): Promise<Output
     await new Promise((resolve, reject) => {
       params.video_source
         .save(save_address)
+        .on("start", (commandLine) => {
+          console.log(`FFmpeg started with command: ${commandLine}`);
+        })
         .on("end", () => {
           resolve("ok");
         })

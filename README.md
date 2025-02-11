@@ -1,3 +1,7 @@
+---
+marp: true
+---
+
 This is a workflow with four nodes. 
 
 ![image](./images/screen.png)

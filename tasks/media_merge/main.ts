@@ -27,8 +27,9 @@ export default async function (
     await new Promise((resolve, reject) => {
       const command = ffmpeg()
         .input(video_file)
-        .inputOption('-hwaccel', 'videotoolbox')
-        .videoCodec('h264_videotoolbox');
+        .on("start", (commandLine) => {
+          console.log(`FFmpeg started with command: ${commandLine}`);
+        })
 
       if (audio_file) {
         command.input(audio_file);
