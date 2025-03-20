@@ -19,7 +19,9 @@ export default async function (params: Inputs, context: Context): Promise<Output
   const origin_file_name = extractBaseName(inputPath);
   const file_name = params.file_name ? params.file_name : origin_file_name;
   const formate = params.format ? params.format : "mp4";
-  const save_address = params.save_address ? `${params.save_address}/${file_name}.${formate}` : `${context.sessionDir}/${file_name}.${formate}`
+  const save_address = params.save_address 
+    ? `${params.save_address}/${file_name}.${formate}` 
+    : `${context.sessionDir}/output-${file_name}.${formate}` // Add 'output-' prefix to avoid overwriting input
   try {
     await new Promise((resolve, reject) => {
       params.video_source

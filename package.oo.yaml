@@ -5,15 +5,13 @@ scripts:
   bootstrap: |
     pnpm install 
     pip install -r requirements.txt
-    wget https://static.oomol.com/ffmpeg_oomol/install.sh --output-document /tmp/installer.sh
+    apt update && apt install -y openssh-client
+    wget https://raw.githubusercontent.com/oomol/sshexec/refs/heads/main/scripts/installer.sh --output-document /tmp/installer.sh
     bash +x /tmp/installer.sh
 dependencies:
-  oomol-transform: 0.0.1
-  oomol-file: 0.0.7
-  read-file: 0.0.3
+  oomol-file: 0.0.9
 name: ffmpeg
-version: 0.0.7
+version: 0.0.9
 description: Video processing library based on fluent-ffmpeg package
 displayName: FFmpeg
-releaseNotes: update nvidia GPU
-repository: https://github.com/oomol-flows/ffmpeg
+releaseNotes: fix save video bug

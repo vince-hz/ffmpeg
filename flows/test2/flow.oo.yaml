@@ -5,19 +5,22 @@ nodes:
     inputs_from:
       - handle: audio_files
         from_node:
-          - node_id: dir-to-path-list#1
-            output_handle: path_array
+          - node_id: list_files_from_folder#1
+            output_handle: file_paths
       - handle: name
         value:
       - handle: format
         value:
       - handle: save_address
-        value: /oomol-driver/oomol-storage/run
-  - task: read-file::dir-to-path-list
-    title: "Dir To Path List #1"
-    node_id: dir-to-path-list#1
+        value:
+  - task: oomol-file::list_files_from_folder
+    title: "List files from folder #1"
+    node_id: list_files_from_folder#1
     inputs_from:
-      - handle: dir
-        value: /oomol-driver/oomol-storage/mp3
+      - handle: folder
       - handle: sort
+        value: false
+      - handle: traverse
+        value: false
+      - handle: absolute_path
         value: true

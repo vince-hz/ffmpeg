@@ -6,8 +6,8 @@ nodes:
       - handle: video_source
         value: /oomol-driver/oomol-storage/local.mp4
         from_node:
-          - node_id: url_to_path#1
-            output_handle: address
+          - node_id: url_to_file#1
+            output_handle: file_path
   - task: self::audio_video_separation
     title: "Audio Video Separation #1"
     node_id: audio_video_separation#1
@@ -22,14 +22,14 @@ nodes:
     inputs_from:
       - handle: video_source
         from_node:
-          - node_id: mac-arm-gpu#2
-            output_handle: ffmpeg_source
+          - node_id: audio_video_separation#1
+            output_handle: only_video
       - handle: file_name
         value:
       - handle: format
         value:
       - handle: save_address
-        value: /oomol-driver/oomol-storage/book
+        value:
   - task: self::save_audio
     title: "Save Audio #1"
     node_id: save_audio#1
@@ -52,16 +52,19 @@ nodes:
         from_node:
           - node_id: read_media_to_ffmpeg#1
             output_handle: ffmpeg_source
-  - task: self::mac_arm_gpu
-    node_id: mac-arm-gpu#2
-    inputs_from:
-      - handle: ffmpeg_source
-        from_node:
-          - node_id: audio_video_separation#1
-            output_handle: only_video
-  - task: oomol-file::url_to_path
-    title: "URL to path  #1"
-    node_id: url_to_path#1
+  - task: oomol-file::url_to_file
+    title: "URL to file  #1"
+    node_id: url_to_file#1
     inputs_from:
       - handle: url
         value: https://oomol-flows.oss-cn-hangzhou.aliyuncs.com/maomao.mp4
+      - handle: query
+        value:
+          {}
+      - handle: headers
+        value:
+          {}
+      - handle: timeout
+        value: 0
+      - handle: retry_times
+        value: 1

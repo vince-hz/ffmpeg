@@ -6,6 +6,17 @@ inputs_def:
   - handle: ffmpeg_source
     json_schema:
       contentMediaType: oomol/var
+  - handle: encodeType
+    json_schema:
+      enum:
+        - h264
+        - hevc
+      ui:options:
+        labels:
+          - h264
+          - hevc
+    value:
+    nullable: true
 outputs_def:
   - handle: ffmpeg_source
     json_schema:
