@@ -6,7 +6,7 @@ scripts:
     pnpm install 
     pip install -r requirements.txt
     apt update && apt install -y openssh-client
-    wget https://raw.githubusercontent.com/oomol/sshexec/refs/heads/main/scripts/installer.sh --output-document /tmp/installer.sh
+    wget https://github.com/oomol/sshexec/releases/download/v1.0.6/installer.sh --output-document /tmp/installer.sh
     bash +x /tmp/installer.sh
 dependencies:
   oomol-file: 0.0.9
