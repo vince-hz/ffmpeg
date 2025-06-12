@@ -4,10 +4,9 @@ nodes:
     node_id: read_media_to_ffmpeg#1
     inputs_from:
       - handle: video_source
-        value: /oomol-driver/oomol-storage/local.mp4
+        value: /oomol-driver/oomol-storage/video/修牛蹄.mp4
         from_node:
-          - node_id: url_to_file#1
-            output_handle: file_path
+          []
   - task: self::audio_video_separation
     title: "Audio Video Separation #1"
     node_id: audio_video_separation#1

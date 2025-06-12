@@ -3,15 +3,16 @@ scripts:
   # Script executed when the container is first loaded
   # eg: bootstrap: pip install pandas
   bootstrap: |
-    pnpm install
+    pnpm install 
+    pip install -r requirements.txt
     apt update && apt install -y openssh-client
     wget https://github.com/oomol/sshexec/releases/download/v1.0.6/installer.sh --output-document /tmp/installer.sh
     bash +x /tmp/installer.sh
 dependencies:
-  oomol-file: 0.0.10
+  oomol-file: 0.0.9
 name: ffmpeg
-version: 0.1.2
+version: 0.1.3
 description: Video processing library based on fluent-ffmpeg package
 displayName: FFmpeg
-releaseNotes: remove useless requirements.txt
+releaseNotes: remove log
 repository: https://github.com/oomol-flows/ffmpeg

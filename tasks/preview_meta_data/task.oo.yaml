@@ -16,4 +16,4 @@ executor:
     spawn: false
     entry: main.ts
 title: Preview Meta Data
-icon: ":twemoji:identification-card:"
+icon: ":carbon:identification:"

@@ -48,4 +48,4 @@ executor:
     spawn: false
     entry: main.ts
 title: Save Video
-icon: ":fa6-solid:file-video:"
+icon: ":carbon:document-video:"

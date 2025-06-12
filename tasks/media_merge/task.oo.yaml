@@ -61,4 +61,4 @@ executor:
     spawn: false
     entry: main.ts
 title: Media Merge
-icon: ":fa6-solid:code-merge:"
+icon: ":carbon:merge:"

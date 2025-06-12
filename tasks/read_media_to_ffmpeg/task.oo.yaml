@@ -18,7 +18,7 @@ outputs_def:
   - handle: file_name
     json_schema:
       type: string
-icon: ":fa6-solid:file-import:currentColor:"
+icon: ":carbon:port-input:"
 ui:
   default_width: 350
 executor:

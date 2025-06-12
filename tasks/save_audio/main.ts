@@ -37,9 +37,6 @@ export default async function (params: Inputs, context: Context): Promise<Output
         .on("start", (commandLine) => {
           console.log(`FFmpeg started with command: ${commandLine}`);
         })
-        .on("progress", (progress) => {
-          console.log(`Processing: ${progress.percent}% done`);
-        })
         .on("end", () => {
           console.log("Conversion complete");
           resolve("ok");

@@ -39,7 +39,7 @@ outputs_def:
         - "null"
       ui:widget: any
     kind: audio
-icon: ":fa6-solid:code-branch:currentColor:"
+icon: ":carbon:partition-specific:"
 ui:
   default_width: 350
 executor:

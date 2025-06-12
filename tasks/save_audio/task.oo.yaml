@@ -43,7 +43,7 @@ outputs_def:
       type: string
       minLength: 1
       ui:widget: file
-icon: ":fa6-solid:file-audio:"
+icon: ":carbon:document-audio:"
 ui:
   default_width: 447.06350824621484
 executor:

@@ -39,4 +39,4 @@ executor:
     spawn: false
     entry: main.ts
 title: Merged Audio
-icon: ":twemoji:musical-notes:"
+icon: ":carbon:audio-console:"

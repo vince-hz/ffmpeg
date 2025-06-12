@@ -22,4 +22,4 @@ outputs_def:
     json_schema:
       contentMediaType: oomol/var
 title: Mac Arm GPU
-icon: ":twemoji:heart-on-fire:"
+icon: ":simple-icons:apple:"

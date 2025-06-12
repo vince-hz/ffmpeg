@@ -16,4 +16,4 @@ executor:
     spawn: false
     entry: main.ts
 title: Cloned FFmpeg
-icon: ":fa6-solid:copy:"
+icon: ":carbon:copy:"
