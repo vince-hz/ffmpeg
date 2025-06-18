@@ -6,7 +6,8 @@ nodes:
       - handle: video_source
         value: /oomol-driver/oomol-storage/video/修牛蹄.mp4
         from_node:
-          []
+          - node_id: url_to_file#1
+            output_handle: file_path
   - task: self::audio_video_separation
     title: "Audio Video Separation #1"
     node_id: audio_video_separation#1
@@ -40,7 +41,7 @@ nodes:
       - handle: file_name
         value:
       - handle: format
-        value:
+        value: mp3
       - handle: save_address
         value:
   - task: self::preview_meta_data
@@ -67,3 +68,28 @@ nodes:
         value: 0
       - handle: retry_times
         value: 1
+  - node_id: save_video#2
+    title: "Save Video #2"
+    inputs_from:
+      - handle: video_source
+        from_node:
+          - node_id: media_intercept#1
+            output_handle: ffmpeg_source
+      - handle: file_name
+        value: null
+      - handle: format
+        value: null
+      - handle: save_address
+        value: null
+    task: self::save_video
+  - node_id: media_intercept#1
+    task: self::media_intercept
+    inputs_from:
+      - handle: ffmpeg_source
+        from_node:
+          - node_id: read_media_to_ffmpeg#1
+            output_handle: ffmpeg_source
+      - handle: start_time
+        value: 0
+      - handle: end_time
+        value: 5

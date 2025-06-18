@@ -1,0 +1,31 @@
+ui:
+  default_width: 450
+inputs_def:
+  - handle: ffmpeg_source
+    description: Input
+    json_schema:
+      contentMediaType: oomol/var
+  - handle: start_time
+    json_schema:
+      type: number
+      ui:options:
+        step: 1
+      minimum: 0
+  - handle: end_time
+    json_schema:
+      type: number
+      ui:options:
+        step: 1
+      minimum: 0
+outputs_def:
+  - handle: ffmpeg_source
+    description: Output
+    json_schema:
+      contentMediaType: oomol/var
+executor:
+  name: nodejs
+  options:
+    entry: main.ts
+    spawn: false
+title: Media Intercept
+icon: ":carbon:cut:"

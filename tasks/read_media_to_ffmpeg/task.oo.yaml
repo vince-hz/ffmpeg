@@ -4,7 +4,6 @@ inputs_def:
     json_schema:
       type: string
       ui:widget: file
-    value: ""
 outputs_def:
   - handle: ffmpeg_source
     description: Output
